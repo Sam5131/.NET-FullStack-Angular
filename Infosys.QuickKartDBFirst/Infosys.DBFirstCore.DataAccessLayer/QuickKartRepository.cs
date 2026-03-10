@@ -51,5 +51,11 @@ namespace Infosys.DBFirstCore.DataAccessLayer
             return lstProduct;
         }
 
+        public List<User> GetAllUsers()
+        {
+            List<User> users = context.Users.OrderBy(u => u.EmailId).ToList();
+            return users;
+        }
+
     }
 }
