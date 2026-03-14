@@ -18,12 +18,18 @@ namespace Infosys.DBFirstCore.ConsoleApp
 
         static void Main(string[] args)
         {
-             //AddNewUser();
-             //UserList();
-             //CategoryList();
-             //ProductInCategoryList();
-             //FilteredProduct();
-             //FilteredProductUsingLike();
+            //CategoryList();
+            //ProductInCategoryList();
+            //FilteredProduct();
+            //FilteredProductUsingLike();
+            //AddCategory();
+            //AddProductUsingRange();
+            //UserList();
+            //AddNewUser();
+            //UpdateCategory();
+            //UpdateProduct();
+            //UpdateProductsUsingRange();
+            UpdateUserPassword();
         }
         static void CategoryList()
         {
@@ -59,7 +65,7 @@ namespace Infosys.DBFirstCore.ConsoleApp
 
                 foreach (var product in lstProducts)
                 {
-                    Console.WriteLine("{0,-12}{1,-30}{2,-12}{3,-12:C}{4,-10}",
+                    Console.WriteLine("{0,-12}{1,-30}{2,-12}{3,-12}{4,-10}",
                         product.ProductId,
                         product.ProductName,
                         product.CategoryId,
@@ -124,6 +130,48 @@ namespace Infosys.DBFirstCore.ConsoleApp
                 }
             }
         }
+        static void AddCategory()
+        {
+            Console.WriteLine("\n=========== ADD NEW CATEGORY ===========\n");
+            string categoryName = "Stationery";
+            bool isAdded = repository.AddCategory(categoryName);
+            if (isAdded)
+            {
+                Console.WriteLine("New category added successfully");
+            }
+            else
+            {
+                Console.WriteLine("Failed to add new category");
+            }
+        }
+        static void AddProductUsingRange()
+        {
+            Product productOne = new()
+            {
+                ProductId = "P158",
+                ProductName = "The Ship of Secrets - Geronimo Stilton",
+                CategoryId = 8,
+                Price = 450,
+                QuantityAvailable = 10
+            };
+            Product productTwo = new Product
+            {
+                ProductId = "P159",
+                ProductName = "101 Nursery Rhymes",
+                CategoryId = 8,
+                Price = 700,
+                QuantityAvailable = 10
+            };
+            bool result = repository.AddProductsUsingAddRange(productOne, productTwo);
+            if (result)
+            {
+                Console.WriteLine("Product details added successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Some error occurred. Try again!!");
+            }
+        }
         static void UserList()
         {
 
@@ -177,6 +225,54 @@ namespace Infosys.DBFirstCore.ConsoleApp
             else
             {
                 Console.WriteLine("Failed to add new user");
+            }
+        }
+        static void UpdateCategory()
+        {
+            bool result = repository.UpdateCategory(8, "Stationery");
+            if (result)
+            {
+                Console.WriteLine("Category details updated successfully");
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong. Try again!");
+            }
+        }
+        static void UpdateProduct()
+        {
+            int status = repository.UpdateProduct("P159", 1000);
+            if (status == 1)
+            {
+                Console.WriteLine("Product price updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Some error occurred. Try again!!");
+            }
+        }
+        static void UpdateProductsUsingRange()
+        {
+            int status = repository.UpdateProductsUsingUpdateRange(8, 10);
+            if (status == 1)
+            {
+                Console.WriteLine("Products updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Some error occurred. Try again!!");
+            }
+        }
+        static void UpdateUserPassword()
+        {
+            bool status = repository.UpdateUserPassword("paul@gmail.com", "paul1234");
+            if (status)
+            {
+                Console.WriteLine("UserPassword updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Some error occurred. Try again!!");
             }
         }
     }
