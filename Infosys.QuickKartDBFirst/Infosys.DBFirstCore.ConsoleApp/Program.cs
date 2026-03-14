@@ -18,6 +18,15 @@ namespace Infosys.DBFirstCore.ConsoleApp
 
         static void Main(string[] args)
         {
+             //AddNewUser();
+             //UserList();
+             //CategoryList();
+             //ProductInCategoryList();
+             //FilteredProduct();
+             //FilteredProductUsingLike();
+        }
+        static void CategoryList()
+        {
             Console.WriteLine("\n=========== CATEGORY LIST ===========\n");
 
             var categories = repository.GetAllCategories();
@@ -29,8 +38,9 @@ namespace Infosys.DBFirstCore.ConsoleApp
             {
                 Console.WriteLine("{0,-15}{1,-25}", category.CategoryId, category.CategoryName);
             }
-
-
+        }
+        static void ProductInCategoryList()
+        {
             byte categoryId = 1;
             Console.WriteLine("\n=========== PRODUCTS IN CATEGORY " + categoryId + " ===========\n");
 
@@ -57,10 +67,12 @@ namespace Infosys.DBFirstCore.ConsoleApp
                         product.QuantityAvailable);
                 }
             }
-
-
+        }
+        static void FilteredProduct()
+        {
             Console.WriteLine("\n=========== FILTERED PRODUCT ===========\n");
 
+            byte categoryId = 1;
             Product product1 = repository.FilterProducts(categoryId);
 
             if (product1 == null)
@@ -82,7 +94,9 @@ namespace Infosys.DBFirstCore.ConsoleApp
                     product1.QuantityAvailable);
             }
 
-
+        }
+        static void FilteredProductUsingLike()
+        {
             string pattern = "BMW%";
             Console.WriteLine("\n=========== PRODUCTS LIKE '" + pattern + "' ===========\n");
 
@@ -109,7 +123,9 @@ namespace Infosys.DBFirstCore.ConsoleApp
                         product.QuantityAvailable);
                 }
             }
-
+        }
+        static void UserList()
+        {
 
             Console.WriteLine("\n=========== USER LIST ===========\n");
 
@@ -140,6 +156,28 @@ namespace Infosys.DBFirstCore.ConsoleApp
 
             Console.WriteLine("\n========================================\n");
             Console.ReadKey();
+
+        }
+        static void AddNewUser()
+        {
+            Console.WriteLine("\n=========== ADD NEW USER ===========\n");
+            User newUser = new User
+            {
+                EmailId = "paul.syamantak@gmail.com",
+                UserPassword = "paul123",
+                Gender = "M",
+                DateOfBirth = new DateOnly(1990, 5, 15),
+                Address = "123 Main Street, Cityville"
+            };
+            bool isAdded = repository.RegisterUser(newUser.EmailId, newUser.UserPassword, newUser.Gender, newUser.DateOfBirth, newUser.Address);
+            if (isAdded)
+            {
+                Console.WriteLine("New User added successfully");
+            }
+            else
+            {
+                Console.WriteLine("Failed to add new user");
+            }
         }
     }
 }
