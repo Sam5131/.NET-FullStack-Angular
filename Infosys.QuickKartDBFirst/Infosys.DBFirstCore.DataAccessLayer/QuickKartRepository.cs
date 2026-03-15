@@ -215,5 +215,81 @@ namespace Infosys.DBFirstCore.DataAccessLayer
             return status;
         }
         #endregion
+
+        #region DELTE Operations
+        public bool DeleteProduct(string productId)
+        {
+            bool status;
+            try
+            {
+                Product product = context.Products.Find(productId);
+                if(product != null)
+                {
+                    using var newContext = new QuickKartDbContext();
+                    newContext.Products.Remove(product);
+                    newContext.SaveChanges();
+                    status = true;
+                }
+                else
+                {
+                    status = false;
+                }
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+        public bool DeleteProductsUsingRemoveRange(string subString)
+        {
+            bool status;
+            try
+            {
+                List<Product> lstProducts = context.Products.Where(p => p.ProductName.Contains(subString)).ToList();
+                if(lstProducts.Count > 0)
+                {
+                    using var newContext = new QuickKartDbContext();
+                    newContext.Products.RemoveRange(lstProducts);
+                    newContext.SaveChanges();
+                    status = true;
+                }
+                else
+                {
+                    status = false;
+                }
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+        public bool DeleteUserDetails(string emailId)
+        {
+            bool status;
+            try
+            {
+                User user = context.Users.Find(emailId);
+                if(user != null)
+                {
+                    using var newContext = new QuickKartDbContext();
+                    newContext.Users.Remove(user);
+                    newContext.SaveChanges();
+                    status = true;
+                }
+                else
+                {
+                    status = false;
+                }
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+
+        #endregion
     }
 }

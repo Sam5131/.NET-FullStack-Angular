@@ -29,7 +29,10 @@ namespace Infosys.DBFirstCore.ConsoleApp
             //UpdateCategory();
             //UpdateProduct();
             //UpdateProductsUsingRange();
-            UpdateUserPassword();
+            //UpdateUserPassword();
+            //DeleteProduct();
+            //DeleteProductUsingRange();
+            DeleteUser();
         }
         static void CategoryList()
         {
@@ -273,6 +276,43 @@ namespace Infosys.DBFirstCore.ConsoleApp
             else
             {
                 Console.WriteLine("Some error occurred. Try again!!");
+            }
+        }
+        static void DeleteProduct()
+        {
+            bool status = repository.DeleteProduct("P159");
+            if (status)
+            {
+                Console.WriteLine("Product details deleted successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Some error occurred. Try again!!");
+            }
+        }
+        static void DeleteProductUsingRange()
+        {
+            bool status = repository.DeleteProductsUsingRemoveRange("BMW");
+            if (status)
+            {
+                Console.WriteLine("Products deleted successfully");
+            }
+            else
+            {
+                Console.WriteLine("Some error occurred.Try again!!");
+            }
+        }
+        static void DeleteUser()
+        {
+            string emailId = "paul@gmail.com";
+            bool result = repository.DeleteUserDetails(emailId);
+            if (result)
+            {
+                Console.WriteLine("User Details deleted successfully");
+            }
+            else
+            {
+                Console.WriteLine("User Details could not be deleted");
             }
         }
     }
