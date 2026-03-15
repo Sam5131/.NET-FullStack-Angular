@@ -1,8 +1,7 @@
-﻿using Infosys.CodeFirstCore.DataAccessLayer.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace Infosys.DBFirstCore.DataAccessLayer.Models;
+namespace Infosys.CodeFirstCore.DataAccessLayer.Models;
 
 public partial class Role
 {

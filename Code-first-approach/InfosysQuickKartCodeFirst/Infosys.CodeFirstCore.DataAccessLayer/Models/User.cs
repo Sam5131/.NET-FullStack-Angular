@@ -1,6 +1,6 @@
-﻿using Infosys.DBFirstCore.DataAccessLayer.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Infosys.CodeFirstCore.DataAccessLayer.Models
@@ -9,6 +9,7 @@ namespace Infosys.CodeFirstCore.DataAccessLayer.Models
     {
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }
+        [Key]
         public string EmailId { get; set; }
         public string Gender { get; set; }
         public Role Role { get; set; }

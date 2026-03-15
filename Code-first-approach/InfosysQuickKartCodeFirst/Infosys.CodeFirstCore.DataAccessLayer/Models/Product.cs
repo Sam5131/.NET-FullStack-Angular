@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Infosys.DBFirstCore.DataAccessLayer.Models;
+namespace Infosys.CodeFirstCore.DataAccessLayer.Models;
 
 public class Product
 {

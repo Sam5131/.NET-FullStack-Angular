@@ -4,6 +4,7 @@ using Infosys.CodeFirstCore.DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infosys.CodeFirstCore.DataAccessLayer.Migrations
 {
     [DbContext(typeof(QuickKartDbCoreContext))]
-    partial class QuickKartDBCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20260315112714_CreateStoredProcedureFunctions")]
+    partial class CreateStoredProcedureFunctions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,5 +1,4 @@
-﻿using Infosys.DBFirstCore.DataAccessLayer.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -12,6 +11,7 @@ namespace Infosys.CodeFirstCore.DataAccessLayer.Models
         {
             Products = new HashSet<Product>();
         }
+        [Key]
         public byte CategoryId { get; set; }
 
         [Required]

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace Infosys.DBFirstCore.DataAccessLayer.Models;
+namespace Infosys.CodeFirstCore.DataAccessLayer.Models;
 
 public partial class CardDetail
 {
+    [Key]
     public decimal CardNumber { get; set; }
 
     public string NameOnCard { get; set; }

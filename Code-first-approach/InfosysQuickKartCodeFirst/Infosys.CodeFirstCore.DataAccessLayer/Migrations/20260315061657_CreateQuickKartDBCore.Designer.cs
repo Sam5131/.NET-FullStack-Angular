@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infosys.CodeFirstCore.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(QuickKartDBCoreContext))]
+    [DbContext(typeof(QuickKartDbCoreContext))]
     [Migration("20260315061657_CreateQuickKartDBCore")]
     partial class CreateQuickKartDBCore
     {
