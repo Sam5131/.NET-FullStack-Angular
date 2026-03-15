@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Infosys.CodeFirstCore.ConsoleUI/Infosys.CodeFirstCore.ConsoleUI.csproj" />
+  <Project Path="Infosys.CodeFirstCore.DataAccessLayer/Infosys.CodeFirstCore.DataAccessLayer.csproj" />
+</Solution>
