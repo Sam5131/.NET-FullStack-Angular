@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11612.150 stable
+VisualStudioVersion = 18.4.11612.150
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyclinicApp.ConsoleApp", "PolyclinicApp.ConsoleApp\PolyclinicApp.ConsoleApp.csproj", "{3E5D44A4-FC4D-459E-A3FD-0AC1F5ADD870}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyclinicApp.DataAccessLayer", "PolyclinicApp.DataAccessLayer\PolyclinicApp.DataAccessLayer.csproj", "{778F55FE-4DA9-447C-8884-CC227E0734C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyclinicWebServices", "PolyclinicWebServices\PolyclinicWebServices.csproj", "{374C13B7-5FD9-4569-8383-50D95804F5BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{778F55FE-4DA9-447C-8884-CC227E0734C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{778F55FE-4DA9-447C-8884-CC227E0734C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{778F55FE-4DA9-447C-8884-CC227E0734C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374C13B7-5FD9-4569-8383-50D95804F5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374C13B7-5FD9-4569-8383-50D95804F5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374C13B7-5FD9-4569-8383-50D95804F5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374C13B7-5FD9-4569-8383-50D95804F5BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
