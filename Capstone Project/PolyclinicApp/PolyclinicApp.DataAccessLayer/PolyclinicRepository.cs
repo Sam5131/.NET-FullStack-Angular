@@ -8,6 +8,18 @@ namespace PolyclinicApp.DataAccessLayer
 {
     public class PolyclinicRepository(PolyclinicDbContext context)
     {
+        // Returns all patients or null on error
+        public List<Patient> GetAllPatients()
+        {
+            try
+            {
+                return context.Patients.ToList();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         public Patient GetPatientDetails(string PatientId)
         {
             Patient patient;
