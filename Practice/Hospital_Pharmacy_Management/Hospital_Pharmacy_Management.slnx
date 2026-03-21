@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="HPMS.ConsoleApp/HPMS.ConsoleApp.csproj" />
+  <Project Path="HPMS.DataAccessLayer/HPMS.DataAccessLayer.csproj" />
+</Solution>
